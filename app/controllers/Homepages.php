@@ -25,16 +25,4 @@ class HomePages extends Controller
     // $this->view('homepages/index', $data);
     $this->view('homepages/index', $data);
   }
-
-  public function create()
-  {
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      $user = [
-        'email' => $_POST['email'],
-        'password' => $_POST['password']
-      ];
-      $this->userModel->creatUser($user);
-    }
-    header('location: ' . URLROOT . '/');
-  }
 }
